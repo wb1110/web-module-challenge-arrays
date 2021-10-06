@@ -45,7 +45,7 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(array){
+function copy(originalFlavors){
   let flavorCopy = originalFlavors.slice();
   return flavorCopy;
 }    
@@ -130,7 +130,7 @@ function getFlavorByIndex(originalFlavors, number){
   }
 
 }
-console.log(getFlavorByIndex(originalFlavors, 2));
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -147,10 +147,14 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(originalFlavors, string){
+  for(let i = 0; i < originalFlavors.length; i++){
+    if(originalFlavors[i] === string){
+      originalFlavors.splice([i], 1);
+      return originalFlavors;
+    }
+  }
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -173,10 +177,17 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+ function filterByWord(originalFlavors, string){
+  let newArray = [];
+  for(let i = 0; i < originalFlavors.length; i++){
+    if(originalFlavors[i].includes(string)){
+      newArray.push(originalFlavors[i]);
+      
+    }
+  }
+  return newArray;
 }
-
+console.log(filterByWord(originalFlavors, "Chocolate"))
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
